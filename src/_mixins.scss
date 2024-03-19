@@ -1,0 +1,10 @@
+@mixin flexCenter() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@mixin resets() {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}

@@ -1,0 +1,65 @@
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+
+body {
+	@include resets();
+	@include flexCenter();
+	flex-direction: column;
+	background-image: url('../src/assets/images/background-pattern-desktop.svg');
+	font-family: 'Work Sans', sans-serif;
+	color: $white;
+}
+.title {
+	margin: 0;
+	padding: 15px;
+}
+.accordion {
+	position: fixed;
+	top: 25%;
+	height: auto;
+	width: 60%;
+	color: $dark-purple;
+	background-color: $white;
+	padding: 20px;
+	border-radius: 15px;
+	&__button {
+		width: 100%;
+		padding: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $white;
+		color: $dark-purple;
+		font-weight: 600;
+		border: none;
+		font-size: 1.1rem;
+		&:hover {
+			cursor: pointer;
+			color: $grayish-purple;
+		}
+		&-content {
+			margin-right: 20px;
+		}
+		&-plus {
+			display: block;
+			&--active {
+				display: none;
+			}
+		}
+		&-minus {
+			display: none;
+			&--active {
+				display: block;
+			}
+		}
+	}
+	&__content {
+		display: none;
+		padding: 15px;
+
+		&--active {
+			display: block;
+		}
+	}
+}
