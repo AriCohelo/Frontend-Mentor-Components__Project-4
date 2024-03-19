@@ -3,22 +3,37 @@
 @import 'fonts';
 
 body {
-	@include resets();
-	@include flexCenter();
+	display: flex;
 	flex-direction: column;
-	background-image: url('../src/assets/images/background-pattern-desktop.svg');
-	font-family: 'Work Sans', sans-serif;
+	align-items: center;
+	padding-top: 150px;
+	font-family: 'Work Sans';
 	color: $white;
+	background-color: $light-pink;
+	background-image: url('../src/assets/images/background-pattern-desktop.svg');
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-attachment: fixed;
 }
+
 .title {
+	display: flex;
 	margin: 0;
 	padding: 15px;
+	&__text {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-left: 20px;
+	}
+	&__star {
+		padding: 10px;
+	}
 }
 .accordion {
-	position: fixed;
-	top: 25%;
-	height: auto;
-	width: 60%;
+	position: sticky;
+	top: 150px;
+	width: 45%;
 	color: $dark-purple;
 	background-color: $white;
 	padding: 20px;
@@ -26,9 +41,10 @@ body {
 	&__button {
 		width: 100%;
 		padding: 15px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		text-align: left;
+		line-height: 1.8;
 		background-color: $white;
 		color: $dark-purple;
 		font-weight: 600;
@@ -40,6 +56,7 @@ body {
 		}
 		&-content {
 			margin-right: 20px;
+			justify-content: left;
 		}
 		&-plus {
 			display: block;
